@@ -38,7 +38,33 @@ class ProductGetter<T>{
     //泛型方法独立于泛型类型，及时使用相同的标识符
     //ProductGetter<Integer> productGetter = new ProductGetter<>();
     //创建对象时指定T为Interger类型,泛型方法还可以接受String类型的参数
-    public <T,K> T getProduct(ArrayList<T> list){
+    public  <T> T getProduct(ArrayList<T> list){
         return list.get(random.nextInt(list.size()));
+    }
+
+    /**
+     * 静态的泛型方法，采用多个泛型类型
+     * @param t
+     * @param e
+     * @param k
+     * @param <T>
+     * @param <E>
+     * @param <K>
+     */
+    public static <T,E,K> void priiType(T t , E e,K k){
+        System.out.println(t +"\t"+ t.getClass().getSimpleName());
+        System.out.println(e +"\t"+ e.getClass().getSimpleName());
+        System.out.println(k +"\t"+ k.getClass().getSimpleName());
+    }
+
+    /**
+     * 泛型可变参数的定义
+     * @param e
+     * @param <E>
+     */
+    public static <E> void print(E...e){
+        for (int i = 0; i < e.length; i++) {
+            System.out.println(e[i]);
+        }
     }
 }

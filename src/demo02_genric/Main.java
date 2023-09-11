@@ -59,6 +59,13 @@ public class Main {
         String  p = productGetter.getProduct(stringArrayList);
         System.out.println(p + "  " + p.getClass().getSimpleName());
 
+        System.out.println("--------------------------------------------------");
+        ProductGetter.priiType(100,"java",true);
+
+        //泛型方法对可变参数的支持
+        System.out.println("================================================");
+        ProductGetter.print(1,2,3,4,5);
+        ProductGetter.print("a","b","c");
     }
 
 }
