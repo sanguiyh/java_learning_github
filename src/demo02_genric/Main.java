@@ -1,5 +1,7 @@
 package demo02_genric;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Genric<String> str = new Genric<>();
@@ -47,7 +49,15 @@ public class Main {
         Integer product2 = intProductGetter.getProduct();
         System.out.println(product2);
 
-
+        System.out.println("===============================================================================");
+        ProductGetter<Integer> productGetter = new ProductGetter<>();
+        ArrayList<String> stringArrayList = new ArrayList<>();
+        stringArrayList.add("phone");
+        stringArrayList.add("pen");
+        stringArrayList.add("table");
+        //泛型方法的调用类型，是通过调用方法的时候来指定
+        String  p = productGetter.getProduct(stringArrayList);
+        System.out.println(p + "  " + p.getClass().getSimpleName());
 
     }
 

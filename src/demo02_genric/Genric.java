@@ -28,4 +28,17 @@ class ProductGetter<T>{
         product = list.get(random.nextInt(list.size()));
         return product;
     }
+
+    /**
+     *
+     * @param list 参数
+     * @return
+     * @param <T> 泛型标识符，具体类型由调用方法的时候指定
+     */
+    //泛型方法独立于泛型类型，及时使用相同的标识符
+    //ProductGetter<Integer> productGetter = new ProductGetter<>();
+    //创建对象时指定T为Interger类型,泛型方法还可以接受String类型的参数
+    public <T,K> T getProduct(ArrayList<T> list){
+        return list.get(random.nextInt(list.size()));
+    }
 }
